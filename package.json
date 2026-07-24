@@ -1,0 +1,8 @@
+{
+  "name": "jugad-backend-root",
+  "private": true,
+  "scripts": {
+    "dev": "cd jugad-backend && npm run dev",
+    "start": "cd jugad-backend && npm start"
+  }
+}
