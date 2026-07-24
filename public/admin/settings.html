@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Settings — JUGAD Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/favicon.png" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="admin-shell">
+  <div id="admin-sidebar"></div>
+  <main class="admin-main">
+    <h1 class="mb-3">Settings</h1>
+
+    <form id="settings-form" class="card mb-4" style="max-width:520px;">
+      <div class="field">
+        <label for="siteName">Site name</label>
+        <input required id="siteName" class="input" />
+      </div>
+      <div class="field">
+        <label for="tagline">Homepage tagline</label>
+        <input id="tagline" class="input" />
+      </div>
+      <div class="field">
+        <label for="supportEmail">Support email</label>
+        <input required type="email" id="supportEmail" class="input" />
+      </div>
+      <div class="field flex flex-between" style="align-items:center;">
+        <label for="maintenanceMode" style="margin-bottom:0;">Maintenance mode banner</label>
+        <label class="switch">
+          <input type="checkbox" id="maintenanceMode" />
+          <span class="switch-slider"></span>
+        </label>
+      </div>
+      <button class="btn btn-primary" type="submit">Save settings</button>
+    </form>
+
+    <form id="adbanner-form" class="card mb-4" style="max-width:520px;">
+      <h2 class="mb-1" style="font-size:16px;">Homepage ad banner</h2>
+      <p class="text-dim mb-3" style="font-size:13px;">Optional promotional banner shown near the top of the homepage.</p>
+      <div class="field flex flex-between" style="align-items:center;">
+        <label for="adEnabled" style="margin-bottom:0;">Show banner</label>
+        <label class="switch">
+          <input type="checkbox" id="adEnabled" />
+          <span class="switch-slider"></span>
+        </label>
+      </div>
+      <div class="field">
+        <label for="adTitle">Title</label>
+        <input id="adTitle" class="input" placeholder="e.g. 30% off all developer tools this week" />
+      </div>
+      <div class="field">
+        <label for="adSubtitle">Subtitle</label>
+        <input id="adSubtitle" class="input" placeholder="Short supporting line" />
+      </div>
+      <div class="field">
+        <label for="adLink">Link URL</label>
+        <input id="adLink" class="input" placeholder="explore.html?category=developers" />
+      </div>
+      <div class="field">
+        <label for="adImage">Banner image (optional)</label>
+        <input type="file" id="adImage" accept="image/*" class="input" style="padding:8px;" />
+        <div id="ad-preview-wrap" style="display:none; margin-top:10px;">
+          <img id="ad-preview" style="width:220px; aspect-ratio:3/1; object-fit:cover; border-radius:10px; border:1px solid var(--border);" />
+        </div>
+      </div>
+      <button class="btn btn-primary btn-sm" type="submit">Save banner</button>
+    </form>
+
+    <form id="payment-form" class="card mb-4" style="max-width:520px;">
+      <h2 class="mb-1" style="font-size:16px;">Receive real UPI payments</h2>
+      <p class="text-dim mb-3" style="font-size:13px;">When you fill this in, buyers who choose GPay/PhonePe/Paytm/UPI at checkout will see your real UPI ID and QR code and pay you directly. There's no gateway involved, so payments are self-reported by the buyer — review them in Orders.</p>
+      <div class="field">
+        <label for="upiId">Your UPI ID</label>
+        <input id="upiId" class="input" placeholder="yourname@okhdfcbank" />
+      </div>
+      <div class="field">
+        <label for="qrImage">QR code image</label>
+        <input type="file" id="qrImage" accept="image/*" class="input" style="padding:8px;" />
+        <div id="qr-preview-wrap" style="display:none; margin-top:10px;">
+          <img id="qr-preview" style="width:140px; height:140px; object-fit:contain; border-radius:10px; border:1px solid var(--border); background:#fff; padding:8px;" />
+        </div>
+      </div>
+      <button class="btn btn-primary btn-sm" type="submit">Save payment details</button>
+    </form>
+
+    <div class="card-flat mb-4" style="max-width:520px;">
+      <h2 class="mb-1" style="font-size:16px;">Real email notifications</h2>
+      <p class="text-dim" style="font-size:13px;">
+        Password reset codes and "new software" alerts are sent as real email automatically, as long as the server has SMTP
+        credentials configured in its <code>.env</code> file. This isn't set here in the admin panel — see the README for setup
+        (any provider works: Gmail with an App Password, Resend, Brevo, SendGrid SMTP, etc). Without it, password reset still
+        works by showing the code on screen instead of emailing it.
+      </p>
+    </div>
+
+    <div class="card-flat" style="max-width:520px;">
+      <h2 class="mb-2" style="font-size:16px;">Danger zone</h2>
+      <p class="text-dim mb-3" style="font-size:13px;">This affects every visitor to the site, not just your browser — resetting data on a real shared server isn't something to do casually. See the README for how to do it safely against MongoDB directly.</p>
+      <button class="btn btn-danger btn-sm" id="reset-data-btn">Reset all data</button>
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/notifications.js"></script>
+<script src="../js/pages/admin/admin-nav.js"></script>
+<script src="../js/pages/admin/admin-settings.js"></script>
+</body>
+</html>

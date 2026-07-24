@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My dashboard — JUGAD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.png" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="navbar"></div>
+
+<main class="page container">
+  <h1 id="greeting" class="mb-1">Hi 👋</h1>
+  <p class="text-dim mb-3">Manage your downloads, wishlist and account here.</p>
+
+  <div class="flex gap-sm wrap mb-3" id="tab-buttons">
+    <button class="btn btn-outline btn-sm tab-btn active" data-tab="library">📥 My Library</button>
+    <button class="btn btn-outline btn-sm tab-btn" data-tab="wishlist">❤ Wishlist</button>
+    <button class="btn btn-outline btn-sm tab-btn" data-tab="orders">🕒 Order History</button>
+    <button class="btn btn-outline btn-sm tab-btn" data-tab="payments">💳 Payment Methods</button>
+    <button class="btn btn-outline btn-sm tab-btn" data-tab="profile">👤 Profile</button>
+  </div>
+
+  <div id="tab-content"></div>
+</main>
+
+<div id="footer"></div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/pages/dashboard.js"></script>
+</body>
+</html>

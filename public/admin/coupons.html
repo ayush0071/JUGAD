@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Coupons — JUGAD Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/favicon.png" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="admin-shell">
+  <div id="admin-sidebar"></div>
+  <main class="admin-main">
+    <div class="section-head">
+      <h1>Coupons</h1>
+    </div>
+
+    <form id="coupon-form" class="card mb-4" style="max-width:520px;">
+      <h2 class="mb-2" style="font-size:16px;">Create a coupon</h2>
+      <div class="flex gap-md wrap">
+        <div class="field" style="flex:1; min-width:150px;">
+          <label for="code">Code</label>
+          <input required id="code" class="input" placeholder="e.g. SAVE20" style="text-transform:uppercase;" />
+        </div>
+        <div class="field" style="flex:1; min-width:150px;">
+          <label for="type">Type</label>
+          <select id="type" class="input">
+            <option value="percent">Percent off</option>
+            <option value="flat">Flat amount off (₹)</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex gap-md wrap">
+        <div class="field" style="flex:1; min-width:150px;">
+          <label for="value">Value</label>
+          <input required type="number" min="1" id="value" class="input" placeholder="e.g. 10" />
+        </div>
+        <div class="field" style="flex:1; min-width:150px;">
+          <label for="usageLimit">Usage limit (0 = unlimited)</label>
+          <input type="number" min="0" id="usageLimit" class="input" value="0" />
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">+ Create coupon</button>
+    </form>
+
+    <div id="coupons-table"></div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/pages/admin/admin-nav.js"></script>
+<script src="../js/pages/admin/admin-coupons.js"></script>
+</body>
+</html>

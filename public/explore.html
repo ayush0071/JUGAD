@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Explore software — JUGAD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.png" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="navbar"></div>
+
+<main class="page container">
+  <h1 class="mb-3">Explore software</h1>
+
+  <div class="flex flex-between wrap gap-md mb-3">
+    <form id="search-form" class="flex gap-sm" style="max-width:380px; width:100%;">
+      <input type="text" id="search-input" class="input" placeholder="Search tools, e.g. 'PDF converter'" />
+      <button class="btn btn-primary" type="submit">🔍</button>
+    </form>
+    <div class="flex gap-sm wrap">
+      <select id="category-filter" class="input" style="width:auto;">
+        <option value="">All categories</option>
+        <option value="students">Students</option>
+        <option value="workers">Workers</option>
+        <option value="editors">Editors</option>
+        <option value="developers">Developers</option>
+        <option value="corporate">Corporate</option>
+        <option value="designers">Designers</option>
+        <option value="other">Other</option>
+      </select>
+      <select id="sort-filter" class="input" style="width:auto;">
+        <option value="newest">Newest</option>
+        <option value="popular">Most downloaded</option>
+        <option value="priceLow">Price: Low to High</option>
+        <option value="priceHigh">Price: High to Low</option>
+        <option value="rating">Top rated</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="results-grid" class="grid-software"></div>
+  <div id="pagination" class="pagination"></div>
+</main>
+
+<div id="footer"></div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/pages/explore.js"></script>
+</body>
+</html>

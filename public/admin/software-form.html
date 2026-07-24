@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Add/Edit Software — JUGAD Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/favicon.png" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="admin-shell">
+  <div id="admin-sidebar"></div>
+  <main class="admin-main">
+    <h1 id="form-title" class="mb-3">Add new software</h1>
+
+    <form id="software-form" class="card mb-4" style="max-width:640px;">
+      <div class="field">
+        <label for="title">Title</label>
+        <input required id="title" class="input" />
+      </div>
+      <div class="field">
+        <label for="tagline">Tagline</label>
+        <input id="tagline" class="input" />
+      </div>
+      <div class="field">
+        <label for="coverImage">Cover image</label>
+        <input type="file" id="coverImage" accept="image/*" class="input" style="padding:8px;" />
+        <p class="hint">This image appears on the software card in the feed and on the detail page. JPG/PNG/WebP, ideally 16:9.</p>
+        <div id="cover-preview-wrap" style="display:none; margin-top:10px;">
+          <img id="cover-preview" style="width:220px; aspect-ratio:16/9; object-fit:cover; border-radius:10px; border:1px solid var(--border);" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="description">Description</label>
+        <textarea required id="description" rows="5"></textarea>
+      </div>
+      <div class="flex gap-md wrap">
+        <div class="field" style="flex:1; min-width:180px;">
+          <label for="category">Category</label>
+          <select id="category" class="input">
+            <option value="students">Students</option>
+            <option value="workers">Workers</option>
+            <option value="editors">Editors</option>
+            <option value="developers">Developers</option>
+            <option value="corporate">Corporate</option>
+            <option value="designers">Designers</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="field" style="flex:1; min-width:180px;">
+          <label for="developer">Developer credit</label>
+          <input required id="developer" class="input" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="tags">Tags (comma separated)</label>
+        <input id="tags" class="input" />
+      </div>
+      <div class="flex gap-md wrap">
+        <div class="field" style="flex:1; min-width:150px;">
+          <label for="price">Price (₹)</label>
+          <input type="number" min="0" id="price" class="input" value="0" />
+        </div>
+        <div class="field" style="flex:1; min-width:150px;">
+          <label for="discountPrice">Discount price (₹, optional)</label>
+          <input type="number" min="0" id="discountPrice" class="input" value="0" />
+        </div>
+      </div>
+      <div class="flex gap-lg wrap mb-3">
+        <label class="checkbox-row"><input type="checkbox" id="isFree" /> Free software</label>
+        <label class="checkbox-row"><input type="checkbox" id="featured" /> Featured on homepage</label>
+        <select id="status" class="input" style="width:auto;">
+          <option value="published">Published</option>
+          <option value="coming-soon">Coming soon</option>
+          <option value="draft">Draft</option>
+          <option value="archived">Archived</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" type="submit" id="submit-btn">Create software</button>
+    </form>
+
+    <div id="versions-section" style="display:none;">
+      <h2 class="mb-2" style="font-size:20px;">Versions</h2>
+      <div id="versions-list" class="mb-3"></div>
+
+      <form id="version-form" class="card" style="max-width:640px;">
+        <div class="flex gap-md wrap">
+          <div class="field" style="flex:1; min-width:180px;">
+            <label for="versionNumber">Version number (e.g. 1.0.0)</label>
+            <input required id="versionNumber" class="input" />
+          </div>
+          <div class="field" style="flex:1; min-width:180px;">
+            <label for="platform">Platform</label>
+            <select id="platform" class="input">
+              <option value="cross-platform">Cross-platform</option>
+              <option value="windows">Windows</option>
+              <option value="mac">Mac</option>
+              <option value="linux">Linux</option>
+              <option value="android">Android</option>
+              <option value="ios">iOS</option>
+              <option value="web">Web</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="changelog">Changelog (optional)</label>
+          <input id="changelog" class="input" />
+        </div>
+        <div class="field">
+          <label for="versionFile">Software file</label>
+          <input required type="file" id="versionFile" />
+          <p class="hint">Upload the real installer/package file (.exe, .zip, .dmg, .apk, etc). It's stored on the server and only served to buyers whose payment the admin has confirmed.</p>
+        </div>
+        <button class="btn btn-outline" type="submit" id="upload-version-btn">Upload version</button>
+      </form>
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/notifications.js"></script>
+<script src="../js/pages/admin/admin-nav.js"></script>
+<script src="../js/pages/admin/admin-software-form.js"></script>
+</body>
+</html>
