@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JUGAD — Software for people who build, learn & ship</title>
+<meta name="description" content="JUGAD is a marketplace of tools built by developers, for students, workers, editors, developers and corporate teams." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.png" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="navbar"></div>
+
+<main>
+  <div class="container">
+    <section class="hero fade-up">
+      <span class="eyebrow">Built by real developers, used by real people</span>
+      <h1>Software that works, <span class="brand-accent">made for you.</span></h1>
+      <p>JUGAD is a marketplace of tools built by independent developers — for students, workers, editors, developers and corporate teams. Explore, download, and pay only what's fair.</p>
+      <div class="hero-actions">
+        <a href="explore.html" class="btn btn-primary">Explore software →</a>
+        <a href="register.html" class="btn btn-outline">Create free account</a>
+      </div>
+    </section>
+
+    <div id="ad-banner-slot"></div>
+
+    <section class="stats-bar fade-up">
+      <div class="stat"><div class="num" id="stat-software">–</div><div class="label">Software listed</div></div>
+      <div class="stat"><div class="num" id="stat-downloads">–</div><div class="label">Total downloads</div></div>
+      <div class="stat"><div class="num" id="stat-developers">–</div><div class="label">Independent developers</div></div>
+      <div class="stat"><div class="num">4.6★</div><div class="label">Average rating</div></div>
+    </section>
+
+    <section class="mt-5">
+      <div class="section-head">
+        <div class="section-title-wrap">
+          <span class="eyebrow-sm">Who it's for</span>
+          <h2>Built for how you actually work</h2>
+        </div>
+      </div>
+      <div class="grid-audience">
+        <a class="card audience-card" href="explore.html?category=students" style="animation-delay:0s">
+          <div class="icon">🎓</div>
+          <div class="font-display" style="font-size:16px;">Students</div>
+          <div class="desc">Note-taking, study planners, flashcard tools built by people who were recently in your shoes.</div>
+        </a>
+        <a class="card audience-card" href="explore.html?category=workers" style="animation-delay:.4s">
+          <div class="icon">💼</div>
+          <div class="font-display" style="font-size:16px;">Workers</div>
+          <div class="desc">Time tracking, shift logging, and simple utilities for hourly and on-site work.</div>
+        </a>
+        <a class="card audience-card" href="explore.html?category=editors" style="animation-delay:.8s">
+          <div class="icon">🎬</div>
+          <div class="font-display" style="font-size:16px;">Editors</div>
+          <div class="desc">Fast, focused tools for photo and video editors who don't need a full production suite.</div>
+        </a>
+        <a class="card audience-card" href="explore.html?category=developers" style="animation-delay:1.2s">
+          <div class="icon">💻</div>
+          <div class="font-display" style="font-size:16px;">Developers</div>
+          <div class="desc">Snippet managers, dev utilities, and small tools that save you from reinventing the wheel.</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="mt-5">
+      <div class="section-head">
+        <div class="section-title-wrap">
+          <span class="eyebrow-sm">Featured</span>
+          <h2>Featured software</h2>
+        </div>
+        <a href="explore.html" class="link-btn">View all →</a>
+      </div>
+      <div id="featured-grid" class="grid-software"></div>
+    </section>
+
+    <section class="mt-5" id="upcoming-section" style="display:none;">
+      <div class="section-head">
+        <div class="section-title-wrap">
+          <span class="eyebrow-sm">Coming soon</span>
+          <h2>Upcoming software</h2>
+        </div>
+      </div>
+      <div id="upcoming-grid" class="grid-software"></div>
+    </section>
+
+    <section class="mt-5">
+      <div class="section-head">
+        <div class="section-title-wrap">
+          <span class="eyebrow-sm">The people behind it</span>
+          <h2>Meet the developers</h2>
+        </div>
+      </div>
+      <div id="developers-grid" class="grid-developers"></div>
+    </section>
+
+    <section class="mt-5">
+      <div class="section-head">
+        <div class="section-title-wrap">
+          <span class="eyebrow-sm">How it works</span>
+          <h2>From browsing to downloading in 3 steps</h2>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="card step-card">
+          <div class="step-num">1</div>
+          <h3 style="font-size:16px; margin-bottom:8px;">Explore by category</h3>
+          <p class="text-dim" style="font-size:14px;">Browse software organized for students, workers, editors, developers, corporate teams and designers.</p>
+        </div>
+        <div class="card step-card">
+          <div class="step-num">2</div>
+          <h3 style="font-size:16px; margin-bottom:8px;">Buy or download free</h3>
+          <p class="text-dim" style="font-size:14px;">Free tools download instantly. Paid tools go through a quick, secure checkout — often with a coupon code.</p>
+        </div>
+        <div class="card step-card">
+          <div class="step-num">3</div>
+          <h3 style="font-size:16px; margin-bottom:8px;">Get lifetime version updates</h3>
+          <p class="text-dim" style="font-size:14px;">Everything you buy lives in your library forever — come back anytime for the newest version.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-5">
+      <div class="section-head">
+        <div class="section-title-wrap">
+          <span class="eyebrow-sm">Loved by people who use it</span>
+          <h2>What people are saying</h2>
+        </div>
+      </div>
+      <div class="marquee-wrap">
+        <div class="marquee-track" id="testimonial-track"></div>
+      </div>
+    </section>
+
+    <section class="mt-5" id="faq">
+      <div class="section-head">
+        <div class="section-title-wrap">
+          <span class="eyebrow-sm">Questions</span>
+          <h2>Frequently asked questions</h2>
+        </div>
+      </div>
+      <div class="card-flat" id="faq-list">
+        <div class="faq-item">
+          <div class="faq-q"><span>Is JUGAD free to use?</span><span class="faq-plus">+</span></div>
+          <div class="faq-a">Yes — browsing and creating an account is completely free. Some software listed is free to download, other software has a one-time price set by its developer.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Can I publish my own software?</span><span class="faq-plus">+</span></div>
+          <div class="faq-a">Yes. Create an account and reach out through the admin — in this demo, publishing is handled from the admin panel, but the idea is any developer can list their tools.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>What happens after I buy something?</span><span class="faq-plus">+</span></div>
+          <div class="faq-a">It's added instantly to "My Library" in your dashboard, where you can re-download it or any future version updates any time.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Do you offer refunds?</span><span class="faq-plus">+</span></div>
+          <div class="faq-a">Refund policy is set per deployment — check the contact/support email in the footer for how a specific store handles it.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-box mt-5">
+      <h2>Get notified about new software</h2>
+      <p>No spam — just a note when something new lands in a category you care about.</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" placeholder="you@example.com" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <section class="card text-center mt-5" style="padding:60px 20px;">
+      <h2 class="mb-2">Built something useful?</h2>
+      <p class="text-dim mb-3" style="max-width:420px; margin-left:auto; margin-right:auto;">Join JUGAD and put your software in front of students, developers, and corporate teams who need it.</p>
+      <a href="register.html" class="btn btn-primary">Join as a creator</a>
+    </section>
+  </div>
+</main>
+
+<div id="footer"></div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/pages/home.js"></script>
+</body>
+</html>

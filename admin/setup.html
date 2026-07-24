@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Set up your admin account — JUGAD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/favicon.png" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div style="display:flex; min-height:100vh; align-items:center; justify-content:center; padding:20px;">
+  <form id="setup-form" class="glass form-card fade-up" style="border-radius:16px;">
+    <div class="text-center mb-3">
+      <div style="width:48px;height:48px;border-radius:12px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:20px;">🛡️</div>
+      <h1 style="font-size:22px;">Welcome to JUGAD</h1>
+      <p class="text-dim" style="font-size:13px;">This site has no admin yet. Create the first (and owner) admin account below — this runs once.</p>
+    </div>
+
+    <div class="field">
+      <label for="name">Your name</label>
+      <input required id="name" class="input" />
+    </div>
+    <div class="field">
+      <label for="email">Admin email</label>
+      <input required type="email" id="email" class="input" />
+    </div>
+    <div class="field">
+      <label for="password">Password</label>
+      <input required type="password" id="password" minlength="8" class="input" />
+      <p class="hint">At least 8 characters. Choose something you don't use elsewhere.</p>
+    </div>
+
+    <button class="btn btn-primary btn-block" type="submit" id="submit-btn">Create admin account</button>
+
+    <p class="text-center text-faint mt-3" style="font-size:12px;">
+      <a href="../index.html">← Back to JUGAD</a>
+    </p>
+  </form>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/pages/admin/admin-setup.js"></script>
+</body>
+</html>
